@@ -1,59 +1,130 @@
-# FastAPI Auth Backend
+# Learning Style Prediction System
 
-A minimal authentication backend using FastAPI, JWT, SQLite (SQLAlchemy), and Passlib for hashing.
+A full-stack web application that predicts a student's preferred learning style using a **Random Forest Machine Learning model**. The project combines a **React.js** frontend with a **Flask** backend to provide real-time learning style predictions based on user responses.
 
 ## Features
-- Signup: `POST /auth/signup`
-- Login: `POST /auth/login`
-- Me (protected): `GET /auth/me` with `Authorization: Bearer <token>`
-- Health check: `GET /health`
 
-## Setup
+* Predicts student learning styles using Machine Learning.
+* Random Forest Classifier trained on a learning styles dataset.
+* Interactive React.js user interface.
+* Flask REST API for model prediction.
+* Fast and accurate prediction results.
+* Clean separation of frontend and backend.
+* Easy to extend with additional machine learning models.
 
-1. Create and activate a virtual environment (Windows PowerShell):
+## Tech Stack
+
+### Frontend
+
+* React.js
+* HTML5
+* CSS3
+* JavaScript
+
+### Backend
+
+* Python
+* Flask
+
+### Machine Learning
+
+* Scikit-learn
+* Random Forest
+* Pandas
+* NumPy
+
+## Project Structure
+
 ```
+SGP3/
+│
+├── backend/
+│   ├── app/
+│   ├── models/
+│   ├── app.py
+│   ├── model_trainer.py
+│   ├── model_predictor.py
+│   ├── learning_styles_dataset.csv
+│   └── requirements.txt
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   ├── package.json
+│   └── package-lock.json
+│
+└── README.md
+```
+
+## Installation
+
+### Clone the repository
+
+```bash
+git clone https://github.com/yourusername/learning-style-prediction-system.git
+```
+
+### Backend Setup
+
+```bash
+cd backend
+
 python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-```
 
-2. Install dependencies:
-```
+# Windows
+.venv\Scripts\activate
+
+# Linux/Mac
+source .venv/bin/activate
+
 pip install -r requirements.txt
+
+python app.py
 ```
 
-3. Create a `.env` file based on `.env.example`:
-```
-copy .env.example .env
-```
-Edit `.env` to set a strong `SECRET_KEY`.
+### Frontend Setup
 
-4. Run the dev server:
-```
-uvicorn app.main:app --reload
-```
+```bash
+cd frontend
 
-The API will be available at http://127.0.0.1:8000
+npm install
 
-## Example Requests
-
-- Signup
-```
-curl -X POST http://127.0.0.1:8000/auth/signup -H "Content-Type: application/json" \
-  -d '{"name":"Alice","email":"alice@example.com","password":"secret123"}'
+npm start
 ```
 
-- Login
-```
-curl -X POST http://127.0.0.1:8000/auth/login -H "Content-Type: application/json" \
-  -d '{"email":"alice@example.com","password":"secret123"}'
+## Running the Backend
+
+```bash
+pip install -r backend/requirements.txt
+python backend/app.py
 ```
 
-- Me
-```
-curl http://127.0.0.1:8000/auth/me -H "Authorization: Bearer <TOKEN>"
+## Running the Frontend
+
+```bash
+cd frontend
+npm install
+npm start
 ```
 
-## Notes
-- Database file `auth.db` will be created in the project root (configurable via `DATABASE_URL`).
-- Default CORS allows all origins for easier local development; tighten this for production.
-- Token expiry defaults to 60 minutes; adjust via `ACCESS_TOKEN_EXPIRE_MINUTES`.
+## Workflow
+
+1. User answers the learning style questionnaire.
+2. React sends the responses to the Flask backend.
+3. Flask processes the input and passes it to the trained Random Forest model.
+4. The model predicts the learning style.
+5. The prediction is displayed to the user.
+
+## Future Improvements
+
+* User Authentication
+* Database Integration
+* Performance Dashboard
+* Personalized Learning Recommendations
+* Support for Multiple Machine Learning Algorithms
+
+## Author
+
+**Kreshi Goti**
+
+B.Tech in Computer Science & Engineering
