@@ -1,0 +1,10 @@
+{
+  "json.schemaDownload.enable": false,
+  "json.schemas": [
+    {
+      "fileMatch": ["/frontend/package.json", "**/frontend/package.json", "package.json"],
+      "url": "./frontend/.vscode/package.schema.json"
+    }
+  ],
+  "http.systemCertificates": true
+}

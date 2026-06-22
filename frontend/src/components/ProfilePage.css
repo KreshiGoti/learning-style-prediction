@@ -1,0 +1,69 @@
+/* Form container */
+.profile-form {
+  background-color: #ffffff;
+  color: #1f2937;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  margin: 2rem auto 0;
+  transition: all 0.3s ease;
+}
+
+/* Dark mode styles */
+body.dark-mode .profile-form {
+  background-color: #1e293b;
+  color: #f8fafc;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid #475569;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .form-label {
+  color: #f8fafc;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background-color: #f9f9f9;
+  color: #000000;
+}
+
+body.dark-mode .form-input {
+  background-color: #334155;
+  border-color: #475569;
+  color: #f8fafc;
+}
+
+body.dark-mode .form-input::placeholder {
+  color: #94a3b8;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #200b42;
+  box-shadow: 0 0 0 2px rgba(48, 39, 63, 0.2);
+}
+
+body.dark-mode .form-input:focus {
+  border-color: #a855f7;
+  background-color: #475569;
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.3);
+}

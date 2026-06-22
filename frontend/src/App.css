@@ -1,0 +1,32 @@
+.App {
+  min-height: 100vh;
+}
+
+.content {
+  padding: 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content h1 {
+  color: #1f2937;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.content p {
+  color: #6b7280;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.contact-page-centered {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+  padding: 32px 8px;
+} 

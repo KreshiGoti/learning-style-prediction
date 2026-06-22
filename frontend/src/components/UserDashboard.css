@@ -1,0 +1,72 @@
+.dashboard-page{
+  min-height:100vh;
+  background:#f8f9fa;
+  padding:2rem 1rem;
+}
+body.dark-mode .dashboard-page{background:#0f172a;color:#f8fafc}
+.dashboard-container{
+  max-width:1000px;margin:0 auto;background:#fff;border-radius:16px;
+  padding:2rem;box-shadow:0 10px 30px rgba(0,0,0,0.08)
+}
+body.dark-mode .dashboard-container{background:#1e293b;border:1px solid #475569}
+.dashboard-header{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.25rem}
+.title{margin:0 0 .25rem 0}
+.subtitle{margin:0;color:#6b7280}
+body.dark-mode .subtitle{color:#94a3b8}
+.header-actions{display:flex;gap:.5rem}
+.btn{padding:.6rem 1rem;border-radius:8px;border:1px solid #e5e7eb;background:#f3f4f6;color:#111827;cursor:pointer}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:linear-gradient(135deg,#4f46e5 0%,#4338ca 100%);border:none;color:#fff;box-shadow:0 6px 16px rgba(79,70,229,.35)}
+.alert.error{background:#fee2e2;color:#991b1b;border:1px solid #fecaca;padding:.75rem 1rem;border-radius:8px;margin:.75rem 0}
+.loading,.empty-state{padding:1rem;border:1px dashed #d1d5db;border-radius:12px;text-align:center;color:#6b7280}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1rem 0 1.5rem}
+.stat-card{background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;padding:1rem}
+body.dark-mode .stat-card{background:#0f172a;border-color:#475569}
+.stat-label{color:#6b7280;font-weight:600;font-size:.9rem}
+body.dark-mode .stat-label{color:#94a3b8}
+.stat-value{font-size:1.25rem;font-weight:800;margin-top:.25rem}
+.section-heading{margin:1rem 0 .5rem 0}
+.latest-card{display:flex;gap:1rem;align-items:flex-start;border:1px solid #e5e7eb;border-radius:12px;padding:1rem;background:#fff}
+body.dark-mode .latest-card{background:#0f172a;border-color:#475569}
+.latest-left{flex:1}
+.latest-right{flex:1}
+.pill{display:inline-block;padding:.3rem .6rem;border-radius:9999px;background:#eef2ff;border:1px solid #e0e7ff;color:#3730a3;font-weight:700}
+.pill-success{background:#ecfdf5;border-color:#a7f3d0;color:#065f46}
+.muted{color:#6b7280}
+body.dark-mode .muted{color:#94a3b8}
+.section-title{font-weight:800;margin:.5rem 0}
+.list{margin:0;padding-left:1.25rem}
+.attempts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1rem}
+@media(max-width:900px){.attempts-grid{grid-template-columns:1fr}}
+.attempt-card{border:1px solid #e5e7eb;border-radius:12px;background:#fff}
+body.dark-mode .attempt-card{background:#0f172a;border-color:#475569}
+.attempt-card__header{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;border-bottom:1px solid #e5e7eb}
+body.dark-mode .attempt-card__header{border-color:#475569}
+.attempt-card__body{padding:1rem}
+.time{color:#6b7280}
+.style-row{display:flex;justify-content:space-between;align-items:center;margin:.25rem 0}
+.style-label{color:#6b7280;font-weight:700}
+.style-value{font-weight:800}
+.confidence{margin-top:.25rem}
+.prob-block{margin-top:.5rem}
+.prob-list{margin:0;padding-left:0;list-style:none}
+.prob-list li{display:flex;justify-content:space-between;padding:.25rem 0;border-bottom:1px dashed #e5e7eb}
+body.dark-mode .prob-list li{border-color:#475569}
+.desc-text{margin:.25rem 0;color:#374151}
+body.dark-mode .desc-text{color:#cbd5e1}
+.section-group{margin-top:.5rem}
+.print-only{ display:none }
+
+/* Print styles: only show the last-attempt summary */
+@media print{
+  body{ background:#fff !important }
+  .navbar, .navbar-container, .theme-toggle-btn{ display:none !important }
+  .dashboard-page{ padding:0; background:#fff }
+  .dashboard-container{ box-shadow:none; border:none; padding:1rem }
+  .dashboard-container > *:not(.print-only){ display:none !important }
+  .print-only{ display:block !important }
+  .print-title{ font-size:1.4rem; font-weight:800; margin:0 0 .5rem 0 }
+  .print-meta{ color:#6b7280; margin-bottom:.75rem }
+  .print-card{ border:1px solid #e5e7eb; border-radius:12px; padding:1rem }
+  .print-card h4{ margin:0 0 .5rem 0 }
+}

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; background:#f6f7fb; margin:0; }
+    header { background:#409eff; color:#fff; padding:14px 20px; display:flex; justify-content:space-between; align-items:center; }
+    main { max-width: 900px; margin: 28px auto; background:#fff; padding:24px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
+    h1 { margin:0; font-size:20px; }
+    .btn { padding:8px 12px; background:#fff; color:#409eff; border:1px solid #fff; border-radius:8px; text-decoration:none; }
+    .btn:hover { background: rgba(255,255,255,0.9); }
+    .question { margin-bottom:18px; }
+    .choices label { display:block; margin:6px 0; }
+    .submit { margin-top:16px; padding:10px 14px; background:#409eff; color:#fff; border:none; border-radius:8px; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome, {{ user.name }}</h1>
+    <nav>
+      <a class="btn" href="/logout">Logout</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Sample Quiz</h2>
+    <form>
+      <div class="question">
+        <strong>1) What does JWT stand for?</strong>
+        <div class="choices">
+          <label><input type="radio" name="q1" value="a"> Java Web Token</label>
+          <label><input type="radio" name="q1" value="b"> JSON Web Token</label>
+          <label><input type="radio" name="q1" value="c"> JavaScript Web Token</label>
+        </div>
+      </div>
+      <div class="question">
+        <strong>2) Passwords should be stored as:</strong>
+        <div class="choices">
+          <label><input type="radio" name="q2" value="a"> Plain text</label>
+          <label><input type="radio" name="q2" value="b"> Encrypted with AES</label>
+          <label><input type="radio" name="q2" value="c"> Hashed with a slow hash (e.g., bcrypt)</label>
+        </div>
+      </div>
+      <button class="submit" type="button" onclick="alert('Submitted! (demo)')">Submit</button>
+    </form>
+  </main>
+</body>
+</html>
